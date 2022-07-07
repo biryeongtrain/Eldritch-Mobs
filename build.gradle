@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -13,12 +13,8 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name = "Ladysnake Mods"
+		name = 'Ladysnake Mods'
 		url = 'https://ladysnake.jfrog.io/artifactory/mods'
-		content {
-			includeGroup 'io.github.ladysnake'
-			includeGroupByRegex 'io\\.github\\.onyxstudios.*'
-		}
 	}
 	maven {
 		url "https://maven.terraformersmc.com/"
@@ -36,12 +32,12 @@ dependencies {
 	//Fabric api
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modApi "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cardinal_version}"
-	modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:${project.cardinal_version}"
+	modApi "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api::cardinal-components-entity:${project.cardinal_version}"
 	//modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-chunk:${project.cardinal_version}"
 
-	include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cardinal_version}"
-	include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:${project.cardinal_version}"
+	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_version}"
+	include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_version}"
 	//include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-chunk:${project.cardinal_version}"
 
 	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.config_version}") {
